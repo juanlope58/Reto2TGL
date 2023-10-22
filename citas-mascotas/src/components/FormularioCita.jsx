@@ -37,7 +37,7 @@ const FormularioCita = ({agregarCita}) => {
         }
 
         if (!form.age.trim()){
-            nuevosErrores.age = "la edad es requerida";
+            nuevosErrores.age = "La edad es requerida";
             hayErrores=true;
         }
 
@@ -79,24 +79,24 @@ const FormularioCita = ({agregarCita}) => {
         <div>
             <form className="form-card" onSubmit={handleFormSubmit}>               
                 <input type="text" name="petName" placeholder="Nombre mascota" value={form.petName} onChange={handleInputChange} />
-                {errors.petName && <p>{errors.petName}</p>}
+                {errors.petName && <span>{errors.petName}</span>}
 
                 <input type="number" name="age" placeholder="Edad" value={form.age} onChange={handleInputChange} />
-                {errors.age && <p>{errors.age}</p>}
+                {errors.age && <span>{errors.age}</span>}
 
                 <select name="gender" value={form.gender} onChange={handleInputChange}>
                     <option value="">Género</option>
                     <option value="macho">Macho</option>
                     <option value="hembra">Hembra</option>
                 </select>
-                {errors.gender && <p>{errors.gender}</p>}
+                {errors.gender && <span>{errors.gender}</span>}
 
                 <input type="date" name="date" value={form.date} onChange={handleInputChange}/>
-                {errors.date && <p>{errors.date}</p>}
-                {errors.citaDate && <p>{errors.citaDate}</p>}
+                {errors.date && <span>{errors.date}</span>}
+                {errors.citaDate && <span>{errors.citaDate}</span>}
 
                 <input type="text" name="clientName" value={form.clientName} placeholder="Nombre del cliente" onChange={handleInputChange}/>
-                {errors.clientName && <p>{errors.clientName}</p>}
+                {errors.clientName && <span>{errors.clientName}</span>}
                 
                 <button type="submit" >Agendar cita</button>
             </form>

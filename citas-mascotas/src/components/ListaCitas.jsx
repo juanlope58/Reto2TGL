@@ -3,7 +3,7 @@ import Cita from "./Cita";
 const ListaCitas = ({citas}) => {
 
     return(
-        <div>
+        <div className="content-list-citas">
             <h2>Lista Citas</h2>
             {citas.length > 0 ? (
                 citas.map((cita,index)=> 
