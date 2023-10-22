@@ -6,8 +6,8 @@ const ListaCitas = ({citas}) => {
         <div>
             <h2>Lista Citas</h2>
             {citas.length > 0 ? (
-                citas.map((cita)=> 
-                <Cita key={`${cita.date}${cita.petName}${cita.clientName}`} cita={cita}/>
+                citas.map((cita,index)=> 
+                <Cita key={`${cita.date}${cita.petName}${index}`} cita={cita}/>
                 )
             ):(
                 <p>No hay citas agendadas</p>
