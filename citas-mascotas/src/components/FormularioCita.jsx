@@ -28,6 +28,8 @@ const FormularioCita = ({agregarCita}) => {
 
         let hayErrores = false;
         const nuevosErrores = {};
+        const actualDate = new Date();
+        const citaDate = new Date(form.date);
 
         if (!form.petName.trim()){
             nuevosErrores.petName = "El nombre de la mascota es requerido";
@@ -47,6 +49,11 @@ const FormularioCita = ({agregarCita}) => {
         if (!form.date.trim()){
             nuevosErrores.date = "La fecha es requerida";
             hayErrores=true;
+        }
+
+        if (citaDate < actualDate){
+            nuevosErrores.citaDate = "La fecha no puede estar en el pasado"
+            hayErrores = true;
         }
 
         if (!form.clientName.trim()){
@@ -83,6 +90,7 @@ const FormularioCita = ({agregarCita}) => {
                 {errors.gender && <p>{errors.gender}</p>}
                 <input type="date" name="date" value={form.date} onChange={handleInputChange}/>
                 {errors.date && <p>{errors.date}</p>}
+                {errors.citaDate && <p>{errors.citaDate}</p>}
                 <input type="text" name="clientName" value={form.clientName} placeholder="Nombre del cliente" onChange={handleInputChange}/>
                 {errors.clientName && <p>{errors.clientName}</p>}
                 <button type="submit" >Agendar cita</button>
