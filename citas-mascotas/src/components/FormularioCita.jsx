@@ -28,7 +28,7 @@ const FormularioCita = ({agregarCita}) => {
 
     return(
         <div>
-            <form onSubmit={handleFormSubmit}>               
+            <form className="form-card" onSubmit={handleFormSubmit}>               
                 <input type="text" name="petName" placeholder="Nombre mascota" value={form.petName} onChange={handleInputChange} />
                 <input type="number" name="age" placeholder="Edad" value={form.age} onChange={handleInputChange} />
                 <select name="gender" value={form.gender} onChange={handleInputChange}>

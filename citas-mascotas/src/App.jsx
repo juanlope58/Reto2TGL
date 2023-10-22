@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import FormularioCita from './components/FormularioCita'
 import ListaCitas from './components/ListaCitas'
+import "./styles.scss"
 
 const App = () => {
   const [citas, setCitas] = useState([]);
@@ -12,7 +13,7 @@ const App = () => {
   console.log(citas);
 
   return (
-    <div>
+    <div className='app'>
       <h1>Agendar citas</h1>
       <FormularioCita agregarCita={agregarCita}/>
       <ListaCitas citas={citas}/>

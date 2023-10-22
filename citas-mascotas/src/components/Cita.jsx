@@ -1,6 +1,6 @@
 const Cita = ({cita}) => {
     return(
-        <div>
+        <div className="cita-card">
             <p><strong>Nombre Mascota: </strong>{cita.petName}</p>
             <p><strong>Edad: </strong>{cita.age}</p>
             <p><strong>Género: </strong>{cita.gender}</p>
