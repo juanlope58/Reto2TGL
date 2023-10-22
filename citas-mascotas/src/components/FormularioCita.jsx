@@ -80,19 +80,24 @@ const FormularioCita = ({agregarCita}) => {
             <form onSubmit={handleFormSubmit}>               
                 <input type="text" name="petName" placeholder="Nombre mascota" value={form.petName} onChange={handleInputChange} />
                 {errors.petName && <p>{errors.petName}</p>}
+
                 <input type="number" name="age" placeholder="Edad" value={form.age} onChange={handleInputChange} />
                 {errors.age && <p>{errors.age}</p>}
+
                 <select name="gender" value={form.gender} onChange={handleInputChange}>
                     <option value="">Género</option>
                     <option value="macho">Macho</option>
                     <option value="hembra">Hembra</option>
                 </select>
                 {errors.gender && <p>{errors.gender}</p>}
+
                 <input type="date" name="date" value={form.date} onChange={handleInputChange}/>
                 {errors.date && <p>{errors.date}</p>}
                 {errors.citaDate && <p>{errors.citaDate}</p>}
+
                 <input type="text" name="clientName" value={form.clientName} placeholder="Nombre del cliente" onChange={handleInputChange}/>
                 {errors.clientName && <p>{errors.clientName}</p>}
+                
                 <button type="submit" >Agendar cita</button>
             </form>
         </div>
