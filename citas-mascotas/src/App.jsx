@@ -10,8 +10,6 @@ const App = () => {
     setCitas([...citas, nuevaCita])
   }
 
-  console.log(citas);
-
   return (
     <div className='app'>
       <h1>Agendar citas</h1>
