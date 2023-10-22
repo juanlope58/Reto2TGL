@@ -40,7 +40,12 @@ const FormularioCita = ({agregarCita}) => {
             nuevosErrores.age = "La edad es requerida";
             hayErrores=true;
         }
-
+        
+        if (form.age < 0){
+            nuevosErrores.age = "La edad debe ser positiva";
+            hayErrores=true;
+        }
+        
         if (!form.gender.trim()){
             nuevosErrores.gender = "El género de la mascota es requerido";
             hayErrores=true;
@@ -52,7 +57,7 @@ const FormularioCita = ({agregarCita}) => {
         }
 
         if (citaDate < actualDate){
-            nuevosErrores.citaDate = "La fecha no puede estar en el pasado"
+            nuevosErrores.date = "La fecha no puede estar en el pasado"
             hayErrores = true;
         }
 
@@ -93,7 +98,6 @@ const FormularioCita = ({agregarCita}) => {
 
                 <input type="date" name="date" value={form.date} onChange={handleInputChange}/>
                 {errors.date && <span>{errors.date}</span>}
-                {errors.citaDate && <span>{errors.citaDate}</span>}
 
                 <input type="text" name="clientName" value={form.clientName} placeholder="Nombre del cliente" onChange={handleInputChange}/>
                 {errors.clientName && <span>{errors.clientName}</span>}

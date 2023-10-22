@@ -4,7 +4,7 @@ const ListaCitas = ({citas}) => {
 
     return(
         <div className="content-list-citas">
-            <h2>Lista Citas</h2>
+            <h2>Lista de Citas</h2>
             {citas.length > 0 ? (
                 citas.map((cita,index)=> 
                 <Cita key={`${cita.date}${cita.petName}${index}`} cita={cita}/>

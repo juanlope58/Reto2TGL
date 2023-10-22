@@ -80,7 +80,13 @@
     }
 
     .content-list-citas {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
         h2 {
+            text-align: center;
+            width: 100%;
             color:  rgb(108, 105, 67);
         }
     }
