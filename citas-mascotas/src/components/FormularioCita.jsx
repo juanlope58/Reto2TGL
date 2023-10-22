@@ -17,12 +17,19 @@ const FormularioCita = ({agregarCita}) => {
     const handleFormSubmit = (event) => {
         event.preventDefault();
         agregarCita(form);
+        setForm({
+            petName:'',
+            age:'',
+            gender:'',
+            date:'',
+            clientName:'',
+        })
     }
 
     return(
         <div>
             <form onSubmit={handleFormSubmit}>               
-                <input type="text" name="petName" placeholder="Nombre mascota" value={form.name} onChange={handleInputChange} />
+                <input type="text" name="petName" placeholder="Nombre mascota" value={form.petName} onChange={handleInputChange} />
                 <input type="number" name="age" placeholder="Edad" value={form.age} onChange={handleInputChange} />
                 <select name="gender" value={form.gender} onChange={handleInputChange}>
                     <option value="">Género</option>
